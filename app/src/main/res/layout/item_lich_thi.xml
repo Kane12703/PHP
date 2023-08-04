@@ -11,7 +11,7 @@
         android:layout_width="190dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="15dp"
-        android:backgroundTint="#E1FFC0">
+        android:backgroundTint="#EA7B40">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
                     android:text="Lớp:"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:textColor="#0E42FF"/>
+                    android:textColor="#090909"/>
                 <TextView
                     android:id="@+id/tvLopThi"
                     android:layout_width="wrap_content"

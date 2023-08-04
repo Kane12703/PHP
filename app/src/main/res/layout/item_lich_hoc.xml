@@ -11,7 +11,7 @@
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="15dp"
-        android:backgroundTint="#FFE082">
+        android:backgroundTint="#FB8F55">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Phòng"
                 android:textSize="20dp"
-                android:textColor="#FF0000"
+                android:textColor="@color/black"
                 android:textStyle="bold"/>
             <LinearLayout
                 android:layout_width="match_parent"
