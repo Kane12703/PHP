@@ -36,6 +36,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
     private SearchableFragment currentFragment;
     Fragment fragment;
 
+    FloatingActionButton fab;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        fab = findViewById(R.id.fab);
+
         //Hiển thị mặc định NotifiFragment
         toolBar.setTitle("Home");
         NotifiFragment notifiFragment = new NotifiFragment();
@@ -69,6 +74,19 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setBackground(null);
+        bottomNavigationView.getMenu().getItem(2).setEnabled(false);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick( View view ) {
+                toolBar.setTitle("QR Scan");
+                fragment = new DisplayQRContentFragment();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frameLayout,fragment).commit();
+            }
+        });
+
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

@@ -15,10 +15,8 @@
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/qrScanBottom"
-        android:iconTint="@color/black"
-        android:icon="@drawable/ic_qr_code_scanner"
-        android:title="QR Scan"
-        app:showAsAction="ifRoom"/>
+        android:title=""
+        />
     <item
         android:id="@+id/scoreBottom"
         android:iconTint="@color/black"

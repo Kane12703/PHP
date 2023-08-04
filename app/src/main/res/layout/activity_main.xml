@@ -13,36 +13,79 @@
         android:background="@android:color/transparent"
         android:orientation="vertical"
         android:padding="0dp">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#4DFFC107"
+            android:background="#B2DFDB"
             android:fitsSystemWindows="true"
-            app:title="@null"/>
-<!--        <EditText-->
-<!--            android:id="@+id/edtSearch"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:hint="Search"-->
-<!--            android:imeOptions="actionSearch"-->
-<!--            android:inputType="text" />-->
-        <FrameLayout
-            android:id="@+id/frameLayout"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigationView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
+            app:title="@null" />
 
-            android:background="@android:color/transparent"
-            app:itemIconTint="@color/black"
-            app:itemTextColor="@color/black"
-            app:labelVisibilityMode="selected"
-            app:menu="@menu/menu_bottom"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/coordinator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <FrameLayout
+                    android:id="@+id/frameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <com.google.android.material.bottomappbar.BottomAppBar
+                    android:id="@+id/bottomAppBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@color/white"
+                    app:contentInsetStart="0dp"
+                    app:fabAlignmentMode="center"
+                    app:fabAnimationMode="slide"
+                    app:fabCradleMargin="16dp"
+                    app:fabCradleRoundedCornerRadius="50dp"
+                    app:fabCradleVerticalOffset="10dp">
+
+                    <com.google.android.material.bottomnavigation.BottomNavigationView
+                        android:id="@+id/bottomNavigationView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        app:itemActiveIndicatorStyle="@style/Widget.Material3.BottomNavigationView"
+                        app:elevation="0dp"
+                        app:itemHorizontalTranslationEnabled="true"
+                        app:menu="@menu/menu_bottom" />
+
+                </com.google.android.material.bottomappbar.BottomAppBar>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab"
+                    style="@style/Widget.MaterialComponents.FloatingActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_qr_code_scanner"
+                    android:visibility="visible"
+                    app:borderWidth="0dp"
+                    app:elevation="6dp"
+                    app:fabSize="normal"
+                    app:hoveredFocusedTranslationZ="2dp"
+                    app:layout_anchor="@id/bottomAppBar"
+                    app:maxImageSize="40dp"
+                    app:pressedTranslationZ="12dp"
+                    app:tint="@color/lavender"
+                    app:useCompatPadding="false"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        </RelativeLayout>
+
+
     </LinearLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
